@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:srlEnableHeaderTranslationContent="true"
+        app:srlEnableNestedScrolling="false"
+        app:srlEnablePreviewInEditMode="true"
+        app:srlEnableRefresh="false"
+        >
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/color_white"
+            android:divider="@color/color_light_gray"
+            android:dividerHeight="1dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"/>
+
+        <widget.MyRefreshHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <Button
+        android:id="@+id/btnAdd"
+        style="@style/button_style"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="确认添加"
+        />
+</LinearLayout>

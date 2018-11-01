@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/blue_bg_radius_4"
+            android:gravity="center"
+            android:text="第二步"
+            android:textColor="@color/color_white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="燃气知识宣讲"
+            android:textColor="@color/color_blue"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp">
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:layout_weight="1"
+                android:text="1、户内燃气安全隐患向客户解释清楚"
+                />
+
+            <ToggleButton
+                android:id="@+id/toggleButton1"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_button_selector"
+                android:checked="true"
+                android:textOff=""
+                android:textOn=""
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_light_gray"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp">
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:layout_weight="1"
+                android:text="2、户内燃气安全隐患整改措施解释到位"
+                />
+
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_button_selector"
+                android:checked="true"
+                android:textOff=""
+                android:textOn=""
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_light_gray"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp">
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:layout_weight="1"
+                android:text="3、户内燃气安全知识宣传"
+                />
+
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_button_selector"
+                android:checked="true"
+                android:textOff=""
+                android:textOn=""
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_light_gray"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp">
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:layout_weight="1"
+                android:text="4、户内燃气安全手册发放"
+                />
+
+            <ToggleButton
+                android:id="@+id/toggleButton4"
+                android:layout_width="55dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/check_button_selector"
+                android:checked="true"
+                android:textOff=""
+                android:textOn=""
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_light_gray"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEnter"
+        style="@style/button_style"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="20dp"
+        android:text="下一步"
+        />
+</LinearLayout>

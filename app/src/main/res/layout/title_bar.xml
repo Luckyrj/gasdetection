@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/color_blue"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:scaleType="center"
+        android:src="@mipmap/back_icon"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/color_white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="260dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/iv_back"
+        android:background="@drawable/white_bg_radius_4"
+        android:drawableLeft="@mipmap/search_icon"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical|left"
+        android:hint="请输入关键字查找"
+        android:imeOptions="actionSearch"
+        android:paddingLeft="11dp"
+        android:singleLine="true"
+        android:textColorHint="@color/color_gray"
+        android:textSize="14sp"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tvRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/white_bg_radius_4"
+        android:padding="5dp"
+        android:text="历史数据"
+        android:textColor="@color/color_blue"
+        android:textSize="15sp"
+        android:visibility="gone"
+        />
+</RelativeLayout>

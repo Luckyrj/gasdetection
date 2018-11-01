@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="108dp"
+    android:background="@drawable/white_bg_radius_4"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@mipmap/list_name_icon"
+        android:drawablePadding="10dp"
+        android:text="李大一"
+        android:textColor="@color/color_black"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tvNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@mipmap/list_num_icon"
+        android:drawablePadding="10dp"
+        android:text="12548451561588"
+        android:textColor="@color/color_dark_gray"
+        android:textSize="14sp"
+        />
+
+    <TextView
+        android:id="@+id/tvLocate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@mipmap/list_posi_icon"
+        android:drawablePadding="10dp"
+        android:text="四新大道"
+        android:textColor="@color/color_dark_gray"
+        android:textSize="14sp"
+        />
+
+</LinearLayout>

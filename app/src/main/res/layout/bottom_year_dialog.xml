@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/btnEnter"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:text="滑动选择器具使用年限"
+        android:textColor="@color/color_light_black"
+        android:textSize="15sp"
+        />
+
+    <Button
+        android:id="@+id/btnEnter"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:background="@drawable/blue_bg_radius_4"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+
+    <cn.qqtheme.framework.widget.WheelView
+        android:id="@+id/wheelView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_below="@id/btnEnter"
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>

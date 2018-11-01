@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/check_produinfo_icon"
+                android:drawablePadding="10dp"
+                android:gravity="left"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="安检产品信息"
+                android:textColor="@color/color_blue"
+                android:textSize="13sp"/>
+
+            <LinearLayout
+                android:id="@+id/llType"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/color_white"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvType"
+                    style="@style/text_wrap_15_dark_style"
+                    android:layout_marginRight="15dp"
+                    android:text="类型"
+                    />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/rb2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"/>
+
+                    <RadioButton
+                        android:id="@+id/rb3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:visibility="gone"
+                        />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_light_gray"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/color_white">
+
+                <TextView
+                    style="@style/text_wrap_15_dark_style"
+                    android:layout_weight="1"
+                    android:text="选择品牌"
+                    />
+
+                <TextView
+                    android:id="@+id/tvBrand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@mipmap/check_detail_icon"
+                    android:minWidth="40dp"
+                    android:textColor="@color/color_light_black"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_light_gray"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/color_white">
+
+                <TextView
+                    style="@style/text_wrap_15_dark_style"
+                    android:layout_weight="1"
+                    android:text="选择型号"
+                    />
+
+                <TextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@mipmap/check_detail_icon"
+                    android:minWidth="40dp"
+                    android:textColor="@color/color_light_black"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_light_gray"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/color_white">
+
+                <TextView
+                    style="@style/text_wrap_15_dark_style"
+                    android:layout_weight="1"
+                    android:text="使用年限"
+                    />
+
+                <TextView
+                    android:id="@+id/tvYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@mipmap/check_detail_icon"
+                    android:minWidth="40dp"
+                    android:textColor="@color/color_light_black"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_light_gray"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/color_white">
+
+                <TextView
+                    style="@style/text_wrap_15_dark_style"
+                    android:layout_weight="1"
+                    android:text="输入尺寸"
+                    />
+
+                <EditText
+                    android:id="@+id/etWidth"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/gray_stroke_white_bg_4"
+                    android:gravity="center"
+                    android:hint="宽"
+                    android:inputType="number"
+                    android:textColor="@color/color_light_black"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    style="@style/text_wrap_15_dark_style"
+                    android:layout_marginLeft="0dp"
+                    android:text="*"
+                    />
+
+                <EditText
+                    android:id="@+id/etHeight"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/gray_stroke_white_bg_4"
+                    android:gravity="center"
+                    android:hint="高"
+                    android:inputType="number"
+                    android:textColor="@color/color_light_black"
+                    android:textSize="15sp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/check_item_icon"
+                android:drawablePadding="10dp"
+                android:gravity="left"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="请逐一检查以下项目，对检测合格的项目打勾"
+                android:textColor="@color/color_blue"
+                android:textSize="13sp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:divider="@color/color_light_gray"
+                android:dividerHeight="1dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/check_note_icon"
+                android:drawablePadding="10dp"
+                android:gravity="left"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="填写备注说明"
+                android:textColor="@color/color_blue"
+                android:textSize="13sp"/>
+
+            <EditText
+                android:id="@+id/etNote"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/color_white"
+                android:gravity="left|top"
+                android:hint="请从此处输入备注..."
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:textColorHint="#adc1cd"
+                android:textSize="13sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/check_vedio_icon"
+                android:drawablePadding="10dp"
+                android:gravity="left"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="上传视频拍摄影像(仅1个)"
+                android:textColor="@color/color_blue"
+                android:textSize="13sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvUpVedio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableBottom="@mipmap/check_upvedio_icon"
+                    android:drawablePadding="8dp"
+                    android:text="点击拍摄或上传视频"
+                    android:textColor="#adc1cd"
+                    android:textSize="13sp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerVedio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:overScrollMode="never"
+                    android:visibility="gone"
+                    />
+                <!--<ImageView-->
+                <!--android:id="@+id/ivVedio"-->
+                <!--android:layout_width="76dp"-->
+                <!--android:layout_height="76dp"-->
+                <!--android:scaleType="centerInside"-->
+                <!--android:src="@mipmap/check_addphoto_icon"-->
+                <!--android:visibility="gone"-->
+                <!--/>-->
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/check_photo_icon"
+                android:drawablePadding="10dp"
+                android:gravity="left"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="上传或拍摄照片(可上传3张)"
+                android:textColor="@color/color_blue"
+                android:textSize="13sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@color/color_white"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvUpPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableBottom="@mipmap/check_upphoto_icon"
+                    android:drawablePadding="8dp"
+                    android:text="点击拍摄或上传照片"
+                    android:textColor="#adc1cd"
+                    android:textSize="13sp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:overScrollMode="never"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnEnter"
+                style="@style/button_style"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:text="保存提交"
+                />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

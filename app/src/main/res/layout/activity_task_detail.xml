@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/color_pink"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/check_info_icon"
+                    android:drawablePadding="8dp"
+                    android:text="基本信息"
+                    android:textColor="@color/color_white"
+                    android:textSize="15sp"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="13dp"
+                    android:src="@mipmap/check_edit_icon"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:padding="15dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@mipmap/check_num_icon"
+                            android:drawablePadding="7dp"
+                            android:text="客户编号"
+                            android:textColor="@color/color_gray"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvNum"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="123"
+                            android:textColor="#333333"
+                            android:textSize="13sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@mipmap/check_name_icon"
+                            android:drawablePadding="7dp"
+                            android:text="客户姓名"
+                            android:textColor="@color/color_gray"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="123"
+                            android:textColor="#333333"
+                            android:textSize="13sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@mipmap/check_tel_icon"
+                            android:drawablePadding="7dp"
+                            android:text="联系电话"
+                            android:textColor="@color/color_gray"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvTel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoLink="phone"
+                            android:drawablePadding="9dp"
+                            android:drawableRight="@mipmap/check_dial_icon"
+                            android:text="12345678901"
+                            android:textColor="@color/color_blue"
+                            android:textSize="13sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@mipmap/check_city_icon"
+                            android:drawablePadding="7dp"
+                            android:text="所在城市"
+                            android:textColor="@color/color_gray"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvCity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="123"
+                            android:textColor="#333333"
+                            android:textSize="13sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@mipmap/check_str_icon"
+                            android:drawablePadding="7dp"
+                            android:text="所在街道"
+                            android:textColor="@color/color_gray"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvStreet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="123"
+                            android:textColor="#333333"
+                            android:textSize="13sp"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="15dp"
+                            android:drawableLeft="@mipmap/check_commu_icon"
+                            android:drawablePadding="7dp"
+                            android:text="所在小区"
+                            android:textColor="@color/color_gray"
+                            android:textSize="13sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvArea"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="123"
+                            android:textColor="#333333"
+                            android:textSize="13sp"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:src="@mipmap/privadata_img"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_bg_radius_4"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/check_fire_icon"
+                    android:drawablePadding="8dp"
+                    android:text="通气情况"
+                    android:textColor="@color/color_black"
+                    android:textSize="15sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tvFire"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="13dp"
+                    android:text="已通气"
+                    android:textColor="@color/color_gray"
+                    android:textSize="16sp"
+                    />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_bg_radius_4"
+                >
+
+                <TextView
+                    android:id="@+id/tvRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:drawableLeft="@mipmap/check_record_icon"
+                    android:drawablePadding="8dp"
+                    android:text="开始录音"
+                    android:textColor="@color/color_black"
+                    android:textSize="15sp"
+                    />
+                <!--计时器-->
+                <Chronometer
+                    android:id="@+id/chronometer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="13dp"
+                    android:layout_toRightOf="@id/tvRecord"
+                    android:drawableLeft="@mipmap/recording_icon"
+                    android:drawablePadding="8dp"
+                    android:textColor="@color/color_blue"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="13dp"
+                    android:layout_toLeftOf="@id/ivRecord"
+                    android:src="@mipmap/play_icon"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:id="@+id/ivRecord"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="13dp"
+                    android:src="@mipmap/record_start_icon"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEnter"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/blue_bg_radius_4"
+            android:gravity="center"
+            android:text="正常入户"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/btnNotMeet"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/yellow_bg_radius_4"
+            android:gravity="center"
+            android:text="到访不遇"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/btnNotAllow"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/yellow_bg_radius_4"
+            android:gravity="center"
+            android:text="拒绝入户"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+</LinearLayout>

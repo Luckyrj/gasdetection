@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/check_group_icon"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="请拍摄或上传和客户的合照"
+        android:textColor="@color/color_blue"
+        android:textSize="13sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:background="@color/color_white"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvUpPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@mipmap/check_upphoto_icon"
+            android:drawablePadding="8dp"
+            android:text="点击拍摄或上传照片"
+            android:textColor="#adc1cd"
+            android:textSize="13sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnFinish"
+            style="@style/button_style"
+            android:layout_marginBottom="40dp"
+            android:text="安检完成"
+            />
+    </LinearLayout>
+
+</LinearLayout>

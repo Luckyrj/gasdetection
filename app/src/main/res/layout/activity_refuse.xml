@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/color_white">
+
+        <TextView
+            style="@style/text_wrap_15_dark_style"
+            android:layout_weight="1"
+            android:text="日期"
+            />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:text="2018-05-15  15:25:20"
+            android:textColor="@color/color_dark_gray"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/check_visit_icon"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="到访情况"
+        android:textColor="@color/color_blue"
+        android:textSize="13sp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/color_white"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/rb1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_blue_bg_selector"
+            android:button="@null"
+            android:checked="true"
+            android:padding="7dp"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:id="@+id/rb2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gray_blue_bg_selector"
+            android:button="@null"
+            android:padding="7dp"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:id="@+id/rb3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/gray_blue_bg_selector"
+            android:button="@null"
+            android:padding="7dp"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="14sp"
+            android:visibility="gone"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/check_note_icon"
+        android:drawablePadding="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="left"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="填写备注说明"
+        android:textColor="@color/color_blue"
+        android:textSize="13sp"/>
+
+    <EditText
+        android:id="@+id/etNote"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/color_white"
+        android:gravity="left|top"
+        android:hint="请从此处输入备注..."
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:textColorHint="#adc1cd"
+        android:textSize="13sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/check_photo_icon"
+        android:drawablePadding="10dp"
+        android:gravity="left"
+        android:paddingBottom="10dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        android:text="上传或拍摄照片(仅1张)"
+        android:textColor="@color/color_blue"
+        android:textSize="13sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/color_white"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvUpPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@mipmap/check_upphoto_icon"
+            android:drawablePadding="8dp"
+            android:text="点击拍摄或上传照片"
+            android:textColor="#adc1cd"
+            android:textSize="13sp"
+            />
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnEnter"
+            style="@style/button_style"
+            android:layout_marginBottom="40dp"
+            android:text="确定"
+            />
+    </LinearLayout>
+
+</LinearLayout>

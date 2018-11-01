@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/llMaterial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/color_pink"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/rectify_material_icon"
+                        android:drawablePadding="8dp"
+                        android:text="材料费用"
+                        android:textColor="@color/color_white"
+                        android:textSize="15sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/ivAddMaterial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="13dp"
+                        android:src="@mipmap/rectify_add_icon"
+                        />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerMaterial"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTool"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/color_green"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/rectify_heater_icon"
+                        android:drawablePadding="8dp"
+                        android:text="器具费用"
+                        android:textColor="@color/color_white"
+                        android:textSize="15sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/ivAddGoods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="13dp"
+                        android:src="@mipmap/rectify_add_icon"
+                        />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerGoods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/color_white"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/color_blue"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/rectify_manmade_icon"
+                        android:drawablePadding="8dp"
+                        android:text="人工服务费用"
+                        android:textColor="@color/color_white"
+                        android:textSize="15sp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/ivAddService"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="13dp"
+                        android:src="@mipmap/rectify_add_icon"
+                        />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/color_white"
+        >
+
+        <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="合计费用："
+            android:textColor="@color/color_black"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/tvNext"
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_blue"
+            android:gravity="center"
+            android:text="下一步"
+            android:textColor="@color/color_white"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/color_white"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tvSelect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@mipmap/rectify_deleteunselect_icon"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="全选"
+            android:textColor="@color/color_black"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_red"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/color_white"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</LinearLayout>

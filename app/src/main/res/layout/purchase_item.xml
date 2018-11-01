@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="51dp"
+    android:layout_margin="10dp"
+    >
+
+    <ImageView
+        android:id="@+id/ivSelect"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="8dp"
+        android:src="@mipmap/rectify_deleteunselect_icon"
+        android:visibility="gone"
+        />
+
+    <ImageView
+        android:id="@+id/imgItem"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:src="@mipmap/service_img"
+        />
+
+    <TextView
+        android:id="@+id/tvItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:text="上门安装服务费"
+        android:textColor="@color/color_gray"
+        android:textSize="14sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="200元"
+            android:textColor="@color/color_red"
+            android:textSize="14sp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            >
+
+            <ImageView
+                android:id="@+id/ivMinus"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/white_bg_radius_4"
+                android:src="@mipmap/num_minus_icon"/>
+
+            <EditText
+                android:id="@+id/editNum"
+                android:layout_width="36dp"
+                android:layout_height="26dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/gray_stroke_white_bg_4"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="5"
+                android:textColor="@color/color_black"
+                android:textSize="15sp"/>
+
+            <ImageView
+                android:id="@+id/ivAdd"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="@drawable/white_bg_radius_4"
+                android:src="@mipmap/num_add_icon"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/check_box_selector"
+        android:button="@null"
+        android:checked="false"
+        android:visibility="gone"/>
+</LinearLayout>

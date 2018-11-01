@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <ImageView
+        android:id="@+id/ivRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/rectify_deleteunselect_icon"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/material_img"
+        android:drawablePadding="10dp"
+        android:text="格林式减振管G.ZJG-300"
+        android:textColor="@color/color_dark_gray"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:id="@+id/etNum"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/gray_stroke_white_bg_4"
+        android:inputType="number"
+        android:textColor="@color/color_black"
+        android:textSize="16sp"
+        />
+
+    <ImageView
+        android:id="@+id/ivGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="15dp"
+        android:src="@mipmap/rectify_unseleted_icon"
+        android:visibility="gone"
+        />
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/white_bg_radius_4">
+
+        <TextView
+            android:id="@+id/tvGet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@mipmap/material_get_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:text="材料领取"
+            android:textColor="@color/color_black"
+            android:textSize="12sp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_light_gray"
+            />
+
+        <TextView
+            android:id="@+id/tvStock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@mipmap/material_stock_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:text="材料库存"
+            android:textColor="@color/color_black"
+            android:textSize="12sp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_light_gray"
+            />
+
+        <TextView
+            android:id="@+id/tvRecord"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="10dp"
+            android:drawableTop="@mipmap/material_record_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="30dp"
+            android:text="领取记录"
+            android:textColor="@color/color_black"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:layout_marginBottom="7dp"
+        android:text="@string/application_name"
+        android:textColor="#688999"
+        android:textSize="11sp"
+        />
+</LinearLayout>

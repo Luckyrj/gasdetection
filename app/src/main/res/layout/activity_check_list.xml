@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/blue_bg_radius_4"
+            android:gravity="center"
+            android:text="第一步"
+            android:textColor="@color/color_white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="项目安检"
+            android:textColor="@color/color_blue"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_white"
+        android:divider="@color/color_light_gray"
+        android:dividerHeight="1dp"
+        />
+
+    <Button
+        android:id="@+id/btn"
+        style="@style/button_style"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:text="下一步"
+        />
+</LinearLayout>

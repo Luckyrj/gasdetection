@@ -1,0 +1,118 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="221dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/tvCheck"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="11dp"
+            android:drawableTop="@mipmap/test_check_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="户内安全检查
+技能评测"
+            android:textColor="#2f637b"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#dff0f7"/>
+
+        <TextView
+            android:id="@+id/tvReform"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="11dp"
+            android:drawableTop="@mipmap/test_reform_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="户内隐患整改
+技能评测"
+            android:textColor="#2f637b"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#dff0f7"/>
+
+        <TextView
+            android:id="@+id/tvFire"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="11dp"
+            android:drawableTop="@mipmap/test_fire_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="通气点火
+技能评测"
+            android:textColor="#2f637b"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dff0f7"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="11dp"
+            android:drawableTop="@mipmap/test_defined_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="自定义评测1"
+            android:textColor="#2f637b"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#dff0f7"/>
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="11dp"
+            android:drawableTop="@mipmap/test_defined_icon"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="自定义评测2"
+            android:textColor="#2f637b"
+            android:textSize="12sp"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#dff0f7"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</LinearLayout>

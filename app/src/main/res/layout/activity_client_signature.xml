@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="64dp"
+            android:layout_height="23dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/blue_bg_radius_4"
+            android:gravity="center"
+            android:text="第三步"
+            android:textColor="@color/color_white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:text="检查结果及客户签字"
+            android:textColor="@color/color_blue"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:background="@color/color_white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvUpPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableBottom="@mipmap/check_sign_icon"
+            android:drawablePadding="8dp"
+            android:text="点击手写签名"
+            android:textColor="#adc1cd"
+            android:textSize="13sp"
+            />
+
+        <ImageView
+            android:id="@+id/ivSignature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:text="是否需要整改安装？"
+        android:textColor="@color/color_blue"
+        android:textSize="14sp"
+        />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_blue_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="需要整改安装"
+            android:checked="true"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="14sp"
+            />
+
+        <RadioButton
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_blue_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="自行整改安装"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="14sp"/>
+
+        <RadioButton
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/white_blue_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="不整改安装"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="14sp"/>
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnFree"
+            style="@style/button_style"
+            android:text="免费完成"
+            />
+
+        <Button
+            android:id="@+id/btnCharge"
+            style="@style/button_style"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="10dp"
+            android:text="收费"
+            />
+    </LinearLayout>
+
+</LinearLayout>

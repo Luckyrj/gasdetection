@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/color_white"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:text="原密码"
+                />
+
+            <EditText
+                android:id="@+id/etOld"
+                style="@style/edit_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_light_gray"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            >
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:text="新密码"
+                />
+
+            <EditText
+                android:id="@+id/etNew"
+                style="@style/edit_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_light_gray"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            >
+
+            <TextView
+                style="@style/text_wrap_15_dark_style"
+                android:text="确认新密码"
+                />
+
+            <EditText
+                android:id="@+id/etAgain"
+                style="@style/edit_style"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/color_light_gray"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn"
+        style="@style/button_style"
+        android:layout_marginBottom="50dp"
+        android:text="确认"
+        />
+</LinearLayout>

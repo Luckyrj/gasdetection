@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar"/>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/gray_stroke_white_bg_4"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbMonth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/white_blue_bg_selector"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="技能评测"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/rbToday"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/white_blue_bg_selector"
+            android:button="@null"
+            android:gravity="center"
+            android:text="培训学习"
+            android:textColor="@color/white_gray_selector"
+            android:textSize="15sp"
+            />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="221dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/white_bg_radius_4"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="7dp"
+        android:gravity="center_horizontal|bottom"
+        android:text="@string/application_name"
+        android:textColor="#688999"
+        android:textSize="11sp"
+        />
+
+</LinearLayout>
