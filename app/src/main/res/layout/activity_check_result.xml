@@ -7,7 +7,8 @@
 
     <include layout="@layout/title_bar"/>
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
+        android:id="@+id/nsv_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -28,7 +29,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="客户基本信息"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -54,7 +55,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="客户编号"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -79,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="客户姓名"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -104,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="联系电话"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -129,7 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="30dp"
                         android:text="表编号"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -153,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="43dp"
                         android:text="类型"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -179,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="所在小区"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -206,7 +207,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="安检员信息"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -232,7 +233,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="安检员姓名"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -257,7 +258,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="安检员工号"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -282,7 +283,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="32dp"
                         android:text="入户时间"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -307,7 +308,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="32dp"
                         android:text="完成时间"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -333,7 +334,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="检查结果"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -359,7 +360,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="入户情况"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -384,7 +385,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="整改结果"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -411,7 +412,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="安全隐患问题"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -437,7 +438,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="46dp"
                         android:text="一级隐患"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -462,7 +463,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
                         android:text="隐患解决方案"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -493,7 +494,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="46dp"
                         android:text="二级隐患"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -518,7 +519,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
                         android:text="隐患解决方案"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -549,7 +550,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="46dp"
                         android:text="三级隐患"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -574,7 +575,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
                         android:text="隐患解决方案"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -606,7 +607,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:text="联系方式："
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -615,7 +616,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="400-251-8888"
-                        android:textColor="@color/color_blue"
+                        android:textColor="@color/color_light_black"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         />
@@ -633,7 +634,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="费用"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -659,7 +660,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="付费情况"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -684,7 +685,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="付费金额"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -709,7 +710,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="支付方式"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -736,7 +737,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="器具到期"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -762,7 +763,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="43dp"
                         android:text="连接管到期时间"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -787,7 +788,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="17dp"
                         android:text="燃气热水器到期时间"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -812,7 +813,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="43dp"
                         android:text="燃气灶到期时间"
-                        android:textColor="@color/color_gray"
+                        android:textColor="@color/color_light_black"
                         android:textSize="13sp"
                         />
 
@@ -839,7 +840,7 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="客户确认"
-                android:textColor="@color/color_gray"
+                android:textColor="@color/color_light_black"
                 android:textSize="15sp"
                 />
 
@@ -859,8 +860,8 @@
                 <ImageView
                     android:id="@+id/ivSign"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/signpic_img"
+                    android:layout_height="100dp"
+                    
                     />
             </LinearLayout>
 
@@ -870,16 +871,15 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/color_white"
                 android:drawableBottom="@mipmap/qr_img"
-                android:drawablePadding="8dp"
+                android:drawablePadding="15dp"
                 android:gravity="center_horizontal"
                 android:padding="15dp"
-                android:text="关注城市燃气安全管家
-绑定后即可查询本次服务记录"
+                android:text="关注城市燃气安全管家\n绑定后即可查询本次服务记录"
                 android:textColor="@color/color_black"
                 android:textSize="15sp"
                 />
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"

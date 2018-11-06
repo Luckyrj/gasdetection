@@ -26,7 +26,36 @@ public class SystemUser implements Serializable {
     private String devicemac;
     private String addtime;
     private String introduce;
+
+    private String check_counts;
+    private String ventilate_counts;
+    private String change_counts;
+
     private boolean is_delete;
+    public String getCheck_counts() {
+        return check_counts;
+    }
+
+    public void setCheck_counts(String check_counts) {
+        this.check_counts = check_counts;
+    }
+
+    public String getVentilate_counts() {
+        return ventilate_counts;
+    }
+
+    public void setVentilate_counts(String ventilate_counts) {
+        this.ventilate_counts = ventilate_counts;
+    }
+
+    public String getChange_counts() {
+        return change_counts;
+    }
+
+    public void setChange_counts(String change_counts) {
+        this.change_counts = change_counts;
+    }
+
 
     public String getCompany() {
         return company;

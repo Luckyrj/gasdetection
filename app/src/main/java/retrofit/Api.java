@@ -25,7 +25,8 @@ public class Api {
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(client)
-                    .build().create(ApiService.class);
+                    .build()
+                    .create(ApiService.class);
         }
         return SERVICE;
     }

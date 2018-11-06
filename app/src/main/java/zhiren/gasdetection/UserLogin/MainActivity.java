@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
@@ -16,12 +15,14 @@ import com.luck.picture.lib.entity.LocalMedia;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import model.SystemUser;
 import utils.ACache;
+import utils.LOG;
 import utils.UrlHelper;
-import zhiren.gasdetection.AnJian.ClientSignatureActivity;
+import utils.glideUtils.GlideImageLoader;
 import zhiren.gasdetection.BaseActivity;
 import zhiren.gasdetection.InstallService.InstallDetailActivity;
 import zhiren.gasdetection.R;
@@ -74,6 +75,12 @@ public class MainActivity extends BaseActivity {
     TextView mTvInspect;
     @BindView(R.id.tvCommunity)
     TextView mTvCommunity;
+    @BindView(R.id.tv_check_count)
+    TextView mTvCheckCount;
+    @BindView(R.id.tv_ventilate_count)
+    TextView mTvVentilateCount;
+    @BindView(R.id.tv_change_count)
+    TextView mTvChangeCount;
 
     private String tel;// 手机号作为账号
     private int id;// 用户id
@@ -98,13 +105,19 @@ public class MainActivity extends BaseActivity {
         mTvNum.setText(user.getStaffno());
         mTvCompany.setText(user.getCompany());
         mTvIntro.setText(user.getIntroduce());
+        mTvCheckCount.setText(user.getCheck_counts());
+        mTvVentilateCount.setText(user.getVentilate_counts());
+        mTvChangeCount.setText(user.getChange_counts());
+
         if (user.getSex().equals("男")) {
             mIvSex.setImageResource(R.mipmap.male_icon);
         } else {
             mIvSex.setImageResource(R.mipmap.female_icon);
         }
         String path = UrlHelper.URL_IP + user.getImg();
-        Glide.with(this).load(path).into(mIvPhoto);
+        GlideImageLoader.getInstance().loadImage(this, path, mIvPhoto);
+
+
     }
 
     @Override
@@ -120,13 +133,10 @@ public class MainActivity extends BaseActivity {
                 case PictureConfig.CHOOSE_REQUEST:
                     // 图片、视频、音频选择结果回调
                     List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
-                    // 例如 LocalMedia 里面返回三种path
-                    // 1.media.getPath(); 为原图path
-                    // 2.media.getCutPath();为裁剪后path，需判断media.isCut();是否为true  注意：音视频除外
-                    // 3.media.getCompressPath();为压缩后path，需判断media.isCompressed();是否为true  注意：音视频除外
-                    // 如果裁剪并压缩了，以取压缩路径为准，因为是先裁剪后压缩的
-//                    adapter.setList(selectList);
-//                    adapter.notifyDataSetChanged();
+                    if (selectList.size() > 0) {
+                        LOG.e(selectList.get(0).getPath());
+                        GlideImageLoader.getInstance().loadImage(this, selectList.get(0).getPath(), mIvPhoto);
+                    }
                     break;
             }
         }
@@ -179,7 +189,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(CategoryActivity.class, bundle);
                 break;
             case R.id.tvReform:
-                startActivity(ClientSignatureActivity.class);
+//                startActivity(ClientSignatureActivity.class);
                 break;
             case R.id.tvFire:
                 bundle.putInt("id", id);
@@ -191,4 +201,10 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
+    }
 }

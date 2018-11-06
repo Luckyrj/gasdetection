@@ -226,8 +226,7 @@ public class CheckItemDetailActivity extends BaseActivity {
                         .openGallery(PictureMimeType.ofVideo())
                         .selectionMode(PictureConfig.SINGLE)
                         .videoMaxSecond(60)
-                        .forResult(PictureConfig.CHOOSE_REQUEST)
-                ;
+                        .forResult(PictureConfig.CHOOSE_REQUEST);
                 break;
             case R.id.tvUpPhoto:
 //              启动相册并拍照

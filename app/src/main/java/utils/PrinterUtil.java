@@ -1,6 +1,11 @@
 package utils;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
+import android.media.ThumbnailUtils;
 
 import java.io.UnsupportedEncodingException;
 
@@ -135,7 +140,8 @@ public class PrinterUtil {
         // 整除24时的情况。比如bitmap 分辨率为 240 * 250，占用 7500 byte，
         // 但是实际上要存储11行数据，每一行需要 24 * 240 / 8 =720byte 的空间。再加上一些指令存储的开销，
         // 所以多申请 1000byte 的空间是稳妥的，不然运行时会抛出数组访问越界的异常。
-        int size = bmp.getWidth() * bmp.getHeight() / 8 + 1000;
+        int size = bmp.getWidth() * bmp.getHeight() / 8 + 10000;
+        LOG.e( bmp.getWidth()+"==================="+ bmp.getHeight()+"==========="+size+"");
         byte[] data = new byte[size];
         int k = 0;
         // 设置行距为0的指令
@@ -197,10 +203,67 @@ public class PrinterUtil {
     }
 
     /**
+     * 图片去色,返回灰度图片
+     *
+     * @param bmpOriginal
+     *            传入的彩色图片
+     * @return 去色后的图片
+     */
+    public static Bitmap toGrayscale(Bitmap bmpOriginal) {
+        int width, height;
+        height = bmpOriginal.getHeight();
+        width = bmpOriginal.getWidth();
+        Bitmap bmpGrayscale = Bitmap.createBitmap(width, height,
+                Bitmap.Config.RGB_565);
+        Canvas c = new Canvas(bmpGrayscale);
+        Paint paint = new Paint();
+        ColorMatrix cm = new ColorMatrix();
+        cm.setSaturation(0);
+        ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
+        paint.setColorFilter(f);
+        c.drawBitmap(bmpOriginal, 0, 0, paint);
+        return bmpGrayscale;
+    }
+
+    /**
      * 图片灰度的转化
      */
     private static int RGB2Gray(int r, int g, int b) {
         int gray = (int) (0.29900 * r + 0.58700 * g + 0.11400 * b); // 灰度转化公式
         return gray;
     }
+
+    public static Bitmap convertToBlackWhite(Bitmap bmp) {
+        int width = bmp.getWidth(); // 获取位图的宽
+        int height = bmp.getHeight(); // 获取位图的高
+        int[] pixels = new int[width * height]; // 通过位图的大小创建像素点数组
+
+        bmp.getPixels(pixels, 0, width, 0, 0, width, height);
+        int alpha = 0xFF << 24;
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                int grey = pixels[width * i + j];
+
+                //分离三原色
+                int red = ((grey & 0x00FF0000) >> 16);
+                int green = ((grey & 0x0000FF00) >> 8);
+                int blue = (grey & 0x000000FF);
+
+                //转化成灰度像素
+                grey = (int) (red * 0.3 + green * 0.59 + blue * 0.11);
+                grey = alpha | (grey << 16) | (grey << 8) | grey;
+                pixels[width * i + j] = grey;
+            }
+        }
+        //新建图片
+        Bitmap newBmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        //设置图片数据
+        newBmp.setPixels(pixels, 0, width, 0, 0, width, height);
+
+        Bitmap resizeBmp = ThumbnailUtils.extractThumbnail(newBmp, 380, 460);
+        return resizeBmp;
+    }
+
+
+
 }

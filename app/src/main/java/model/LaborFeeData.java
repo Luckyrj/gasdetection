@@ -39,6 +39,30 @@ public class LaborFeeData {
         private String name;
         private boolean is_default;
         private double price;
+        private boolean editStatus;
+        private int number;
+
+
+
+        public boolean isEditStatus() {
+            return editStatus;
+        }
+
+        public void setEditStatus(boolean editStatus) {
+            this.editStatus = editStatus;
+        }
+
+
+
+        public int getNumber() {
+            return number;
+        }
+
+        public void setNumber(int number) {
+            this.number = number;
+        }
+
+
 
         public String getDepart_id_show() {
             return depart_id_show;

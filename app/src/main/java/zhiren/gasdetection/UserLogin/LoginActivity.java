@@ -36,11 +36,11 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-//      测试条件下，长按自动登录，正式删除
         mBtnLogin.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 login("15678945614", "888888");
+//                login("18759528921", "888888");
                 return true;
             }
         });
@@ -67,7 +67,9 @@ public class LoginActivity extends BaseActivity {
     public void login(String phone, String password) {
         String macAddress = DeviceUtils.getMacAddress();
         String model = DeviceUtils.getModel();
-        Api.getDefault().login(phone, password, macAddress, model)
+
+        Api.getDefault()
+                .login(phone, password, macAddress, model)
                 .compose(RxHelper.<SystemUser>handleResult())
                 .subscribe(new RxSubscriber<SystemUser>(this) {
                     @Override
@@ -75,6 +77,7 @@ public class LoginActivity extends BaseActivity {
                         SPHelper.putInt(LoginActivity.this, "id", systemUser.getId());
                         ACache.get(LoginActivity.this).put("user", systemUser);
                         startActivity(MainActivity.class);
+
                     }
 
                     @Override

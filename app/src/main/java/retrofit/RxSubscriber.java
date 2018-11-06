@@ -2,7 +2,6 @@ package retrofit;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.util.Log;
 
 import rx.Subscriber;
 import zhiren.gasdetection.R;
@@ -70,7 +69,7 @@ public abstract class RxSubscriber<T> extends Subscriber<T> {
 
     @Override
     public void onError(Throwable e) {
-        Log.d("ssssss", e.toString());
+
         e.printStackTrace();
         if (false) { //这里自行替换判断网络的代码
             _onError("网络不可用");

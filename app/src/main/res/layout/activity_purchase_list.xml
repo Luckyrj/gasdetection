@@ -151,6 +151,7 @@
                     android:id="@+id/recyclerService"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     />
             </LinearLayout>
 
@@ -158,6 +159,7 @@
     </android.support.v4.widget.NestedScrollView>
 
     <LinearLayout
+        android:id="@+id/ll_fee_sum"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
@@ -165,15 +167,24 @@
         >
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="合计费用："
+            android:textColor="@color/color_black"
+            android:textSize="13sp"
+            />
+            <TextView
             android:id="@+id/tvMoney"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            android:text="合计费用："
-            android:textColor="@color/color_black"
-            android:textSize="13sp"
+            android:text=""
+            android:textColor="@color/color_red"
+            android:textSize="18sp"
             />
 
         <TextView
@@ -188,6 +199,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_edit_list"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
@@ -195,16 +207,18 @@
         android:visibility="gone"
         >
 
-        <TextView
+        <CheckBox
             android:id="@+id/tvSelect"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:drawableLeft="@mipmap/rectify_deleteunselect_icon"
+            android:drawableLeft="@drawable/check_box_red_selector"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
+            android:button="@null"
             android:text="全选"
+            android:checked="false"
             android:textColor="@color/color_black"
             android:textSize="13sp"
             />

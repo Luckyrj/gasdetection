@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 import model.LaborFeeData;
+import utils.LOG;
 import zhiren.gasdetection.BaseActivity;
 import zhiren.gasdetection.R;
 import zhiren.gasdetection.adapter.FeeSelectAdapter;
@@ -22,40 +24,44 @@ import zhiren.gasdetection.adapter.FeeSelectAdapter;
 public class FeeListActivity extends BaseActivity {
 
     @BindView(R.id.iv_back)
-    ImageView mIvBack;
+    ImageView    mIvBack;
     @BindView(R.id.text)
-    TextView mText;
+    TextView     mText;
     @BindView(R.id.tvRight)
-    TextView mTvRight;
+    TextView     mTvRight;
     @BindView(R.id.ivAddMaterial)
-    ImageView mIvAddMaterial;
+    ImageView    mIvAddMaterial;
     @BindView(R.id.recyclerMaterial)
     RecyclerView mRecyclerMaterial;
     @BindView(R.id.llMaterial)
     LinearLayout mLlMaterial;
     @BindView(R.id.ivAddGoods)
-    ImageView mIvAddGoods;
+    ImageView    mIvAddGoods;
     @BindView(R.id.recyclerGoods)
     RecyclerView mRecyclerGoods;
     @BindView(R.id.llTool)
     LinearLayout mLlTool;
     @BindView(R.id.ivAddService)
-    ImageView mIvAddService;
+    ImageView    mIvAddService;
     @BindView(R.id.recyclerService)
     RecyclerView mRecyclerService;
     @BindView(R.id.llService)
     LinearLayout mLlService;
     @BindView(R.id.tvMoney)
-    TextView mTvMoney;
+    TextView     mTvMoney;
     @BindView(R.id.tvNext)
-    TextView mTvNext;
+    TextView     mTvNext;
     @BindView(R.id.tvSelect)
-    TextView mTvSelect;
+    CheckBox     mSelect;
     @BindView(R.id.tvDelete)
-    TextView mTvDelete;
+    TextView     mTvDelete;
+    @BindView(R.id.ll_fee_sum)
+    LinearLayout llFeeSum;
+    @BindView(R.id.ll_edit_list)
+    LinearLayout llEditList;
 
     private List<LaborFeeData.LaborData> dataList = new ArrayList<>();
-    private FeeSelectAdapter mAdapter;
+    private FeeSelectAdapter             mAdapter;
 
     @Override
     protected int getLayoutId() {
@@ -65,9 +71,12 @@ public class FeeListActivity extends BaseActivity {
     @Override
     protected void initData() {
         mText.setText("费用列表");
+        mTvRight.setText("编辑");
         mRecyclerService.setLayoutManager(new LinearLayoutManager(this));
         mAdapter = new FeeSelectAdapter(this, dataList, R.layout.purchase_item);
         mRecyclerService.setAdapter(mAdapter);
+        mAdapter.setFeeSumListener(sum -> mTvMoney.setText(String.valueOf(sum)));
+
     }
 
     @Override
@@ -78,6 +87,12 @@ public class FeeListActivity extends BaseActivity {
                 case 0:
                     dataList.addAll((List<LaborFeeData.LaborData>) data.getSerializableExtra("data"));
                     mAdapter.notifyDataSetHasChanged();
+                    mTvMoney.setText(String.valueOf(mAdapter.getFeeSum()));
+                    if (dataList.size()>0) {
+                       mTvRight.setVisibility(View.VISIBLE);
+                    } else {
+                        mTvRight.setVisibility(View.GONE);
+                    }
                     break;
                 case 1:
                     break;
@@ -95,6 +110,25 @@ public class FeeListActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tvRight:
+//                String  rigthText=  mTvRight.getText().toString().trim();
+                ////                if ("编辑".equals(rigthText)) {
+                ////                    llEditList.setVisibility(View.VISIBLE);
+                ////                    llFeeSum.setVisibility(View.GONE);
+                ////                    mTvRight.setText("完成");
+                ////                    mAdapter.setIsEdit(true);
+                ////                    for (int i = 0; i <dataList.size() ; i++) {
+                ////                       dataList.get(i).setEditStatus(false);
+                ////                    }
+                ////                    mAdapter.notifyDataSetChanged();
+                ////                    mSelect.setChecked(false);
+                ////                } else {
+                ////                    llEditList.setVisibility(View.GONE);
+                ////                    llFeeSum.setVisibility(View.VISIBLE);
+                ////                    mTvRight.setText("编辑");
+                ////                    mAdapter.setIsEdit(false);
+                ////                    mAdapter.notifyDataSetChanged();
+                ////                    mTvMoney.setText(String.valueOf(mAdapter.getFeeSum()));
+                ////                }
                 break;
             case R.id.ivAddMaterial:
                 intent.putExtra("type", 1);
@@ -111,10 +145,30 @@ public class FeeListActivity extends BaseActivity {
             case R.id.tvNext:
                 break;
             case R.id.tvSelect:
+                              for (int i = 0; i <dataList.size() ; i++) {
+                    if (mSelect.isChecked()) {
+                        dataList.get(i).setEditStatus(true);
+                    }else {
+                        dataList.get(i).setEditStatus(false);
+                    }
+
+                }
+                mAdapter.notifyDataSetChanged();
+
                 break;
             case R.id.tvDelete:
+                LOG.e(dataList.size()+"");
+                for (int i = 0; i <dataList.size() ; i++) {
+                    LOG.e(dataList.get(i).isEditStatus()+"");
+                    if (dataList.get(i).isEditStatus()) {
+                        dataList.remove(i);
+                        i--;
+                    }
+                }
+                mAdapter.notifyDataSetChanged();
                 break;
         }
     }
+
 
 }

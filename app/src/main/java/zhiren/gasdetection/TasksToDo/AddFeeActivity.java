@@ -26,7 +26,7 @@ import utils.SPHelper;
 import utils.ToastUtil;
 import zhiren.gasdetection.BaseActivity;
 import zhiren.gasdetection.R;
-import zhiren.gasdetection.adapter.FeeSelectAdapter;
+import zhiren.gasdetection.adapter.FeeWorkerSelectAdapter;
 
 //  添加费用列表页
 public class AddFeeActivity extends BaseActivity {
@@ -46,7 +46,7 @@ public class AddFeeActivity extends BaseActivity {
     private int id;
     private int type;//区分添加费用类型
     private List<LaborFeeData.LaborData> mDataList = new ArrayList<>();
-    private FeeSelectAdapter mAdapter;
+    private FeeWorkerSelectAdapter mAdapter;
 
     @Override
     protected int getLayoutId() {
@@ -64,7 +64,7 @@ public class AddFeeActivity extends BaseActivity {
         } else {
             mText.setText("添加器具费用");
         }
-        mAdapter = new FeeSelectAdapter(this, mDataList, R.layout.select_fee_item);
+        mAdapter = new FeeWorkerSelectAdapter(this, mDataList, R.layout.select_fee_item);
         mListView.setAdapter(mAdapter);
         getLaborFeeList(page, id);
     }

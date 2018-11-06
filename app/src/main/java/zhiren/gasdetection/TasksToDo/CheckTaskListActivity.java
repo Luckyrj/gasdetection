@@ -103,10 +103,10 @@ public class CheckTaskListActivity extends BaseActivity {
                     @Override
                     public void run() {
                         page = 1;
-                        key = mEtSearch.getText().toString();
-                        getList(page, key);
+                    key = mEtSearch.getText().toString();
+                    getList(page, key);
                         mSmartRefreshLayout.finishRefresh();
-                    }
+                }
                 }, 800);
             }
         });

@@ -8,6 +8,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,16 +21,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.qs.helper.printer.BlueToothService;
-import com.qs.helper.printer.BtService;
 import com.qs.helper.printer.ClsUtils;
 import com.qs.helper.printer.PrintService;
 import com.qs.helper.printer.PrinterClass;
+import com.qs.helper.printer.bt.BtService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,88 +43,95 @@ import model.CheckResult;
 import retrofit.Api;
 import retrofit.RxHelper;
 import retrofit.RxSubscriber;
+import utils.PrinterUtil;
 import utils.ToastUtil;
 import utils.UrlHelper;
 import zhiren.gasdetection.BaseActivity;
 import zhiren.gasdetection.R;
 import zhiren.gasdetection.UserLogin.MainActivity;
 
-import static utils.PrinterUtil.printText;
-
 public class CheckResultActivity extends BaseActivity {
 
+    @BindView(R.id.nsv_content)
+   ScrollView nsvContent;
     @BindView(R.id.iv_back)
-    ImageView mIvBack;
+    ImageView        mIvBack;
     @BindView(R.id.text)
-    TextView mText;
+    TextView         mText;
+    @BindView(R.id.etSearch)
+    EditText         mEtSearch;
+    @BindView(R.id.tvRight)
+    TextView         mTvRight;
     @BindView(R.id.tvNo)
-    TextView mTvNo;
+    TextView         mTvNo;
     @BindView(R.id.tvName)
-    TextView mTvName;
+    TextView         mTvName;
     @BindView(R.id.tvPhone)
-    TextView mTvPhone;
+    TextView         mTvPhone;
     @BindView(R.id.tvTableNo)
-    TextView mTvTableNo;
+    TextView         mTvTableNo;
     @BindView(R.id.tvType)
-    TextView mTvType;
+    TextView         mTvType;
     @BindView(R.id.tvCommunity)
-    TextView mTvCommunity;
+    TextView         mTvCommunity;
     @BindView(R.id.tvStaffName)
-    TextView mTvStaffName;
+    TextView  mTvStaffName;
     @BindView(R.id.tvStaffNo)
-    TextView mTvStaffNo;
+    TextView  mTvStaffNo;
     @BindView(R.id.tvStartTime)
-    TextView mTvStartTime;
+    TextView  mTvStartTime;
     @BindView(R.id.tvFinishTime)
-    TextView mTvFinishTime;
+    TextView  mTvFinishTime;
     @BindView(R.id.tvRuHu)
-    TextView mTvRuHu;
+    TextView  mTvRuHu;
     @BindView(R.id.tvZhengGai)
-    TextView mTvZhengGai;
+    TextView  mTvZhengGai;
     @BindView(R.id.tvFirst)
-    TextView mTvFirst;
+    TextView  mTvFirst;
     @BindView(R.id.tvFirstSolve)
-    TextView mTvFirstSolve;
+    TextView  mTvFirstSolve;
     @BindView(R.id.tvSecond)
-    TextView mTvSecond;
+    TextView  mTvSecond;
     @BindView(R.id.tvSecondSolve)
-    TextView mTvSecondSolve;
+    TextView  mTvSecondSolve;
     @BindView(R.id.tvThird)
-    TextView mTvThird;
+    TextView  mTvThird;
     @BindView(R.id.tvThirdSolve)
-    TextView mTvThirdSolve;
+    TextView  mTvThirdSolve;
     @BindView(R.id.tvPay)
-    TextView mTvPay;
+    TextView  mTvPay;
     @BindView(R.id.tvSum)
-    TextView mTvSum;
+    TextView  mTvSum;
     @BindView(R.id.tvPayType)
-    TextView mTvPayType;
+    TextView  mTvPayType;
     @BindView(R.id.tvExpire1)
-    TextView mTvExpire1;
+    TextView  mTvExpire1;
     @BindView(R.id.tvExpire2)
-    TextView mTvExpire2;
+    TextView  mTvExpire2;
     @BindView(R.id.tvExpire3)
-    TextView mTvExpire3;
+    TextView  mTvExpire3;
     @BindView(R.id.ivSign)
     ImageView mIvSign;
     @BindView(R.id.btnBack)
-    Button mBtnBack;
+    Button    mBtnBack;
     @BindView(R.id.btnPrint)
-    Button mBtnPrint;
+    Button    mBtnPrint;
 
-    private BluetoothAdapter btAdapt;
-    private Handler handler = null;
-    private Handler mhandler = null;
-    private BlueToothService service;
-    protected static final String TAG = "CheckResultActivity";
-    List<String> deviceList = new ArrayList<String>();
+    
+    private                BluetoothAdapter btAdapt;
+    private                Handler          handler  = null;
+    private                Handler          mhandler = null;
+    private                BlueToothService service;
+    protected static final String           TAG      = "CheckResultActivity";
+    List<String>         deviceList = new ArrayList<String>();
     ArrayAdapter<String> arrayAdapter;
-    boolean isconnect = false;
-    public static PrinterClass pl = null;// 打印机操作类
-    public static final int MESSAGE_STATE_CHANGE = 1;
-    public static final int MESSAGE_READ = 2;
-    public static final int MESSAGE_WRITE = 3;
-    private BottomSheetDialog dialog;
+    boolean              isconnect  = false;
+    public static       PrinterClass      pl                   = null;// 打印机操作类
+    public static final int               MESSAGE_STATE_CHANGE = 1;
+    public static final int               MESSAGE_READ         = 2;
+    public static final int               MESSAGE_WRITE        = 3;
+    private             BottomSheetDialog dialog;
+    private  int  printerType=0;
 
     @Override
     protected int getLayoutId() {
@@ -140,8 +152,7 @@ public class CheckResultActivity extends BaseActivity {
 
         mText.setText("安检结果");
         btAdapt = BluetoothAdapter.getDefaultAdapter();// 初始化本机蓝牙功能
-
-        if (btAdapt.getState() == BluetoothAdapter.STATE_OFF) {// 如果蓝牙还没开启
+        if (btAdapt!=null && btAdapt.getState() == BluetoothAdapter.STATE_OFF) {// 如果蓝牙还没开启
             new AlertDialog.Builder(this)
                     .setMessage("开始打印前，请开启手机蓝牙！")
                     .setCancelable(false)
@@ -393,7 +404,7 @@ public class CheckResultActivity extends BaseActivity {
             String str = "" + device.getName() + "|"
                     + device.getAddress();
             deviceList.add(str); // 获取设备名称和mac地址
-            arrayAdapter.notifyDataSetChanged();
+            arrayAdapter.notifyDataSetChanged();   
         }
         btAdapt.startDiscovery();
         dialog.show();
@@ -413,9 +424,28 @@ public class CheckResultActivity extends BaseActivity {
                 startActivity(MainActivity.class);
                 break;
             case R.id.btnPrint:
-                if (isconnect) {
-                    printText("hello world:" + "\n\n");
-                    finish();
+                if (btAdapt!=null && btAdapt.getState() == BluetoothAdapter.STATE_OFF) {// 如果蓝牙还没开启
+                    new AlertDialog.Builder(this)
+                            .setMessage("开始打印前，请开启手机蓝牙！")
+                            .setCancelable(false)
+                            .setPositiveButton("打开蓝牙", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    btAdapt.enable();
+                                }
+                            }).create().show();
+                } else if (isconnect) {
+                    ToastUtil.showLongToast(getApplicationContext(),"打印中，请稍后");
+                    if (0==printerType) {
+                        printerType=1;
+                        new Thread(() -> {
+                            Bitmap bitmap = getScrollViewBitmap(nsvContent);
+                            PrinterUtil.write(PrinterUtil.draw2PxPoint(zoomImg(bitmap,540,1800)));
+                        }).start();
+                    }
+
+
+
                 } else {
                     searchBlueToothDevice();
                 }
@@ -423,7 +453,20 @@ public class CheckResultActivity extends BaseActivity {
         }
     }
 
-
+    public static Bitmap zoomImg(Bitmap bm, int newWidth ,int newHeight){
+        // 获得图片的宽高
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        // 计算缩放比例
+        float scaleWidth = ((float) newWidth) / width;
+        float scaleHeight = ((float) newHeight) / height;
+        // 取得想要缩放的matrix参数
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        // 得到新的图片
+        Bitmap newbm = Bitmap.createBitmap(bm, 0, 0, width, height, matrix, true);
+        return newbm;
+    }
     class ItemClickEvent implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
@@ -446,5 +489,20 @@ public class CheckResultActivity extends BaseActivity {
             }
         }
     }
-
+    /**
+     * 截取scrollview的屏幕
+     **/
+    public static Bitmap getScrollViewBitmap(ScrollView scrollView) {
+        int h = 0;
+        Bitmap bitmap;
+        for (int i = 0; i < scrollView.getChildCount(); i++) {
+            h += scrollView.getChildAt(i).getHeight();
+        }
+        // 创建对应大小的bitmap
+        bitmap = Bitmap.createBitmap(scrollView.getWidth(), h,
+                Bitmap.Config.ARGB_8888);
+        final Canvas canvas = new Canvas(bitmap);
+        scrollView.draw(canvas);
+        return bitmap;
+    }
 }

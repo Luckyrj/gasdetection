@@ -116,6 +116,8 @@ public class TaskDetailActivity extends BaseActivity {
     private int flag;//区别点击的按钮
     private String base64 = "";// 录音文件流
     private String fileName = "";// 录音文件名
+//    private String filepath = "test.pcm";// 录音文件路径
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -166,7 +168,7 @@ public class TaskDetailActivity extends BaseActivity {
                                 .create().show();
                     }
                     break;
-                case R.id.ivEdit:
+                case R.id.ivEdit:// TODO 客户资料编辑功能未开发
                     new AlertDialog.Builder(this)
                             .setTitle("当前客户信息正在审核，不可编辑。")
                             .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
@@ -219,13 +221,14 @@ public class TaskDetailActivity extends BaseActivity {
 
     public void startRecord() {
 //      开始录音就隐藏播放按钮
+        fileName = System.currentTimeMillis()+".pcm"  ;
         mIvPlay.setVisibility(View.GONE);
         final int minBufferSize = AudioRecord.getMinBufferSize(SAMPLE_RATE_INHZ, CHANNEL_CONFIG, AUDIO_FORMAT);
         audioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, SAMPLE_RATE_INHZ,
                 CHANNEL_CONFIG, AUDIO_FORMAT, minBufferSize);
 
         final byte data[] = new byte[minBufferSize];
-        final File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), "test.pcm");
+        final File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), fileName);
         if (!file.mkdirs()) {
             Log.e(TAG, "Directory not created");
         }
@@ -266,8 +269,8 @@ public class TaskDetailActivity extends BaseActivity {
                         os.close();
                         base64 = FileToBase64Util.fileToBase64(file);
                         fileName = file.getName();
-                        Log.d("base64", base64);
-                        Log.d("base64", "fileName" + fileName);
+
+                        Log.d("base64", file.getPath()+":"+"fileName" + fileName);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -279,7 +282,7 @@ public class TaskDetailActivity extends BaseActivity {
     public void stopRecord() {
         isRecording = false;
 //      结束录音就显示播放按钮
-        mIvPlay.setVisibility(View.VISIBLE);
+//        mIvPlay.setVisibility(View.VISIBLE);
 //      释放资源
         if (null != audioRecord) {
             audioRecord.stop();

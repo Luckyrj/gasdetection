@@ -240,12 +240,13 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="13dp"
-                            android:text="安检任务"
+                            android:text="安全检查任务"
                             android:textColor="#2f637b"
                             android:textSize="12sp"
                             />
 
                         <TextView
+                            android:id="@+id/tv_check_count"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
@@ -256,42 +257,7 @@
                             />
                     </LinearLayout>
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="15dp"
-                        android:layout_marginTop="15dp"
-                        android:background="#dff0f7"
-                        />
 
-                    <LinearLayout
-                        android:id="@+id/llDianHuo"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="13dp"
-                            android:text="点火通气任务"
-                            android:textColor="#2f637b"
-                            android:textSize="12sp"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="25"
-                            android:textColor="#88adc1"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            />
-                    </LinearLayout>
 
                     <View
                         android:layout_width="1dp"
@@ -314,16 +280,54 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="13dp"
-                            android:text="隐藏整改任务"
+                            android:text="隐患整改任务"
                             android:textColor="#2f637b"
                             android:textSize="12sp"
                             />
 
                         <TextView
+                            android:id="@+id/tv_change_count"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="100"
+                            android:text="0"
+                            android:textColor="#88adc1"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:background="#dff0f7"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/llDianHuo"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="13dp"
+                            android:text="通气点火任务"
+                            android:textColor="#2f637b"
+                            android:textSize="12sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_ventilate_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="0"
                             android:textColor="#88adc1"
                             android:textSize="18sp"
                             android:textStyle="bold"
@@ -396,8 +400,7 @@
                         android:drawableTop="@mipmap/home_check_icon"
                         android:gravity="center_horizontal"
                         android:paddingTop="20dp"
-                        android:text="户内燃气
-安全检查"
+                        android:text="户内安全检查"
                         android:textColor="#2f637b"
                         android:textSize="12sp"/>
 
@@ -415,8 +418,7 @@
                         android:drawableTop="@mipmap/home_reform_icon"
                         android:gravity="center_horizontal"
                         android:paddingTop="20dp"
-                        android:text="户内隐患
-整改"
+                        android:text="户内隐患整改"
                         android:textColor="#2f637b"
                         android:textSize="12sp"/>
 
@@ -434,7 +436,7 @@
                         android:drawableTop="@mipmap/home_fire_icon"
                         android:gravity="center_horizontal"
                         android:paddingTop="20dp"
-                        android:text="点火通气"
+                        android:text="户内通气点火"
                         android:textColor="#2f637b"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -458,8 +460,7 @@
                         android:drawableTop="@mipmap/home_install_icon"
                         android:gravity="center_horizontal"
                         android:paddingTop="20dp"
-                        android:text="器具安装
-服务"
+                        android:text="器具安装服务"
                         android:textColor="#2f637b"
                         android:textSize="12sp"/>
 

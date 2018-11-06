@@ -31,7 +31,7 @@ public interface ApiService {
 
 
     /*
-    * 修改密码
+            * 修改密码
     * */
     @GET("UpdatePwd")
     Observable<BaseModel<SystemUser>> updatePwd(
@@ -41,8 +41,8 @@ public interface ApiService {
     );
 
     /*
-  *  街道小区
-  * */
+    * 街道小区
+     * */
     @GET("GetStreetAndArea")
     Observable<BaseModel<Street>> getStreetAndArea(
             @Query("assign_to") int id,

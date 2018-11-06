@@ -1,6 +1,5 @@
 package zhiren.gasdetection.UserLogin;
 
-import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
